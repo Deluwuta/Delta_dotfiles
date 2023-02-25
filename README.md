@@ -5,7 +5,7 @@ Idk
 ### Antigen
 Needed to apply extensions to Zsh. You can change it if you want to.
 
-### Alias
+### Aliases
 #### Lsd
 I aliased "ls" to "lsd" because colors.
 #### Bat
