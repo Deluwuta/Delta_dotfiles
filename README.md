@@ -5,3 +5,5 @@ Idk
 ### Antigen
 ### Lsd
 ### Starship
+### Npm
+Dependency for some mason-nvim lsp servers.
