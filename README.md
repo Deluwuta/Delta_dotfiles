@@ -10,3 +10,5 @@ I aliased "ls" to "lsd" because colors.
 Prompt used on both my bashrc and zshrc.
 ### Npm
 Dependency for some mason-nvim lsp servers.
+### Bat
+I aliased "cat" to "bat" because colors.
