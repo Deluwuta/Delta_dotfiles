@@ -1,4 +1,4 @@
 # Dependencies
-tmp
+tpm
 
 Thats all, thanks
