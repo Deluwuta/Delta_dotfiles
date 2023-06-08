@@ -37,7 +37,7 @@ truncation_symbol = "…/"
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"~" = " ~"
+"~" = " ~"
 "Documents" = " "
 "Downloads" = " "
 "Music" = "🎜 "
@@ -217,5 +217,5 @@ format = '[](fg:#333a56 $style)[  $time ](fg:#94e2d5 $style)'
 # Last param in the first line/row
 # fg:#3b4363 if time enabled
 [character]
-success_symbol = "[](fg:#2c324a)"
-error_symbol = "[ ](fg:#2c324a)"
+success_symbol = "[ ](fg:#2c324a)"
+error_symbol = "[  ](fg:#2c324a)"
