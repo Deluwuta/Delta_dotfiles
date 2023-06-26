@@ -26,7 +26,7 @@ require("lualine").setup {
 
 -- Highlight current line number :^)
 vim.cmd.set("cursorline")
-vim.cmd [[ highlight CursorLineNr guifg=gold gui=bold ]]
+vim.cmd [[ highlight CursorLineNr guifg=#f38ba8	gui=bold ]]
 
 -- To keep cursor shape when exiting Neovim (block | ver25 = I-Beam | hor20 = underline)
 vim.cmd [[

@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["haskell-tools.nvim"] = {
+    loaded = true,
+    path = "/home/delta/.local/share/nvim/site/pack/packer/start/haskell-tools.nvim",
+    url = "https://github.com/mrcjkb/haskell-tools.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/impatient.nvim",

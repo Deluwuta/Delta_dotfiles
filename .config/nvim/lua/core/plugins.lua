@@ -30,8 +30,11 @@ return require('packer').startup(function(use)
         'lervag/vimtex',
     }
 
+    -- Haskell
     use {
-        "christoomey/vim-tmux-navigator",
+        'mrcjkb/haskell-tools.nvim',
+         requires = { 'nvim-lua/plenary.nvim' },
+         branch = '1.x.x', -- recommended
     }
 
     -- Completions
@@ -74,6 +77,11 @@ return require('packer').startup(function(use)
     use { "Everblush/nvim", as = "everblush" }
     use({ "rose-pine/neovim", as = "rose-pine" })
 
+    -- Tmux
+    use {
+        "christoomey/vim-tmux-navigator",
+    }
+
     -- Tools
     use {
         "terrortylor/nvim-comment",
@@ -85,8 +93,12 @@ return require('packer').startup(function(use)
     use {
         "nvim-tree/nvim-web-devicons",
         "nvim-lualine/lualine.nvim",
-        "j-hui/fidget.nvim",
         -- "lukas-reineke/indent-blankline.nvim",
+    }
+
+    use {
+        "j-hui/fidget.nvim",
+        tag = 'legacy',
     }
 
     -- Automatically set up your configuration after cloning packer.nvim

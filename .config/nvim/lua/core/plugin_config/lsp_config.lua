@@ -2,7 +2,8 @@ require("mason").setup()
 
 local servers = {
     "bashls",        -- bash
-    "clangd",        -- c, cpp
+    "clangd",        -- C, C--
+    -- "hls",           -- haskell
     "html",          -- html
     "lua_ls",        -- lua
     "pyright",       -- pyton
