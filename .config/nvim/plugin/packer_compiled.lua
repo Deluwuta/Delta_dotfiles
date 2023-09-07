@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ayu = {
+    loaded = true,
+    path = "/home/delta/.local/share/nvim/site/pack/packer/start/ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -98,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  embark = {
+    loaded = true,
+    path = "/home/delta/.local/share/nvim/site/pack/packer/start/embark",
+    url = "https://github.com/embark-theme/vim"
   },
   everblush = {
     loaded = true,
@@ -119,15 +129,15 @@ _G.packer_plugins = {
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
-  ["haskell-tools.nvim"] = {
-    loaded = true,
-    path = "/home/delta/.local/share/nvim/site/pack/packer/start/haskell-tools.nvim",
-    url = "https://github.com/mrcjkb/haskell-tools.nvim"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/delta/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
+  },
+  kanagawa = {
+    loaded = true,
+    path = "/home/delta/.local/share/nvim/site/pack/packer/start/kanagawa",
+    url = "https://github.com/rebelot/kanagawa.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

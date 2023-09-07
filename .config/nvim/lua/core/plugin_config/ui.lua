@@ -12,7 +12,7 @@ require("fidget").setup {}
 require("lualine").setup {
     options = {
         icons_enabled = true,
-        theme = "catppuccin",
+        theme = "embark",
     },
     sections = {
         lualine_a = {
@@ -26,7 +26,7 @@ require("lualine").setup {
 
 -- Highlight current line number :^)
 vim.cmd.set("cursorline")
-vim.cmd [[ highlight CursorLineNr guifg=#f38ba8	gui=bold ]]
+vim.cmd [[ highlight CursorLineNr guifg=#f5c2e7	gui=bold ]]
 
 -- To keep cursor shape when exiting Neovim (block | ver25 = I-Beam | hor20 = underline)
 vim.cmd [[

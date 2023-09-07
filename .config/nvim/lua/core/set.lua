@@ -3,7 +3,9 @@ vim.g.mapleader = " "
 vim.o.termguicolors = true
 
 vim.opt.nu = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+
+vim.o.guicursor = "n-v-c:block,i-ci-r-cr:hor25"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

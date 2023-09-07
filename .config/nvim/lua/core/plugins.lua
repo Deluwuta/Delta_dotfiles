@@ -32,9 +32,9 @@ return require('packer').startup(function(use)
 
     -- Haskell
     use {
-        'mrcjkb/haskell-tools.nvim',
-         requires = { 'nvim-lua/plenary.nvim' },
-         branch = '1.x.x', -- recommended
+        -- 'mrcjkb/haskell-tools.nvim',
+         -- requires = { 'nvim-lua/plenary.nvim' },
+         -- branch = '1.x.x', -- recommended
     }
 
     -- Completions
@@ -75,7 +75,10 @@ return require('packer').startup(function(use)
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "folke/tokyonight.nvim", as = "tokyonight" }
     use { "Everblush/nvim", as = "everblush" }
-    use({ "rose-pine/neovim", as = "rose-pine" })
+    use { "rose-pine/neovim", as = "rose-pine" }
+    use { "rebelot/kanagawa.nvim", as = "kanagawa" }
+    use { "embark-theme/vim", as = "embark" }
+    use { "Shatur/neovim-ayu", as = "ayu" }
 
     -- Tmux
     use {
