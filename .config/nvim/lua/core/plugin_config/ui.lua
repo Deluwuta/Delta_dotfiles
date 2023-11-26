@@ -7,7 +7,7 @@ require("nvim-highlight-colors").setup {
 }
 
 -- LSP charging animation
-require("fidget").setup {}
+-- require("fidget").setup {}
 
 require("lualine").setup {
     options = {

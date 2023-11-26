@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
     -- Telescope shit
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        -- tag = '0.1.1',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use 'nvim-telescope/telescope-file-browser.nvim'
@@ -97,11 +97,6 @@ return require('packer').startup(function(use)
         "nvim-tree/nvim-web-devicons",
         "nvim-lualine/lualine.nvim",
         -- "lukas-reineke/indent-blankline.nvim",
-    }
-
-    use {
-        "j-hui/fidget.nvim",
-        tag = 'legacy',
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
