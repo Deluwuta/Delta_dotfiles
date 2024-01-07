@@ -1,7 +1,6 @@
-[colors]
-author = "Protesilaos Stavrou (https://protesilaos.com)"
-description = "Dark theme with a palette inspired by winter nights at the city (WCAG AA compliant)"
-name = "Tempus Winter"
+# author = "Protesilaos Stavrou (https://protesilaos.com)"
+# description = "Dark theme with a palette inspired by winter nights at the city (WCAG AA compliant)"
+# name = "Tempus Winter"
 
 [colors.bright]
 black = "#2a2e38"

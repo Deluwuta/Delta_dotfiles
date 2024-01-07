@@ -2,17 +2,17 @@
 size = 14
 
 [font.bold]
-family = "JetBrainsMonoNL Nerd Font"
+family = "Hasklig"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "Hasklig"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMonoNL Nerd Font"
+family = "Hasklig"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMonoNL Nerd Font"
+family = "Hasklig"
 style = "Medium"

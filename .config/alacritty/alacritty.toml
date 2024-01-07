@@ -1,4 +1,7 @@
-import = ["/home/delta/.config/alacritty/font.toml", "/home/delta/.config/alacritty/themes/tempus-winter.toml"]
+import = [
+    "/home/delta/.config/alacritty/font.toml",
+    "/home/delta/.config/alacritty/themes/kanagawa-wave.toml"
+]
 
 [cursor]
 unfocused_hollow = true
@@ -85,9 +88,9 @@ title = "Alacritty"
 general = "Alacritty"
 instance = "Alacritty"
 
-[window.dimentions]
-columns = 0
-lines = 0
+# [window.dimentions]
+# columns = 0
+# lines = 0
 
 [window.padding]
 x = 6
