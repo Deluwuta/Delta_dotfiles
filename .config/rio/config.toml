@@ -108,7 +108,7 @@ args = []
 # width = 600
 # height = 400
 # mode = "windowed"
-opacity = 0.9
+opacity = 1.0
 blur = true
 decorations = "disabled"
 
@@ -284,9 +284,9 @@ size = 18
 #
 # Example:
 [colors]
-background = '#0F0D0E'
-foreground = '#F9F4DA'
-cursor = '#F38BA3'
+background = '#282c34'
+foreground = '#a0a8b7'
+cursor = '#e55561'
 tabs = '#443d40'
 tabs-active = '#F38BA3'
 green = '#0BA95B'
@@ -300,12 +300,15 @@ yellow = '#FCBA28'
 # More information in: https://raphamorim.io/rio/docs/config/bindings
 #
 # Example:
-# [bindings]
-# keys = [
-#   { key = "q", with = "super", action = "Quit" },
-#   # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
-#   { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
-# ]
+[bindings]
+keys = [
+  # { key = "q", with = "super", action = "Quit" },
+  # Bytes[27, 91, 53, 126] is equivalent to "\x1b[5~"
+  # { key = "home", with = "super | shift", bytes = [27, 91, 53, 126] }
+  { key = "o", with = "control", action = "SplitRight" },
+  { key = "t", with = "control", action = "CreateTab" },
+  { key = "w", with = "control", action = "CloseTab" },
+]
 
 # Platform
 #
@@ -336,4 +339,3 @@ yellow = '#FCBA28'
 [developer]
 log-level = "OFF"
 enable-log-file = false
-
