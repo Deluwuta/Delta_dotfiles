@@ -1,0 +1,29 @@
+# UI changes
+font-size = 14
+font-family = JetBrains Mono
+font-feature = -calt
+
+## It eats the Nvim opacity xd
+background-opacity = 1
+window-decoration = false
+
+# QoL
+mouse-hide-while-typing = true
+
+# Theming
+cursor-color = "#94e2d5"
+cursor-text = "#1e1e2e"
+cursor-style = block
+# DoomOne
+theme = nord-wave
+
+# Bindings
+keybind = ctrl+shift+k=close_surface
+
+# Other important binds
+# keybind = ctrl+shift+enter=fullscreen_surface
+# keybind = ctrl+shift+o=split-vertical
+# keybind = ctrl+shift+e=split-orizontal
+# keybind = ctrl+shift+t=new_tab
+# keybind = ctrl+shift+left/right=prev/next tab
+# keybind = ctrl+alt+up/down/left/right=movement_between_panes
