@@ -1,10 +1,10 @@
 local _M = {
     -- Define!
-    terminal = "alacritty",
+    terminal = "ghostty",
     -- launcher = "dmenu_run",
     launcher = "rofi -show drun -show-icons",
     browser = "firefox",
-    file_manager = "dolphin",
+    file_manager = "nemo",
     editor = "nvim",
 
     -- Modifier keys

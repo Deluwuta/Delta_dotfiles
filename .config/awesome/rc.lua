@@ -24,6 +24,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 
 -- Paths
 local HOME = os.getenv("HOME")
+local vars = require("utils.user_variables")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -37,10 +38,9 @@ require("modules.error_handling")
 beautiful.init(HOME .. "/.config/awesome/themes/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-local terminal = "alacritty"
-local editor = os.getenv("EDITOR") or "nvim"
+local terminal = vars.terminal
+local editor = os.getenv("EDITOR") or vars.editor
 local editor_cmd = terminal .. " -e " .. editor
-
 -- }}}
 
 -- {{{ Menu
@@ -79,8 +79,8 @@ awful.layout.layouts = {
 
 -- {{{ Wallpaper
 screen.connect_signal("request::wallpaper", function(s)
-    -- $HOME/Pictures/wallpapers/zhefeng_wallpaper.png
-    awful.spawn("feh --bg-fill " .. HOME .. "/Pictures/wallpapers/zhefeng_wallpaper.png")
+    -- $HOME/Pictures/wallpapers/camellya_red_wuwa_twitter_kyktsu0908.jpg
+    awful.spawn("feh --bg-fill " .. HOME .. "/Pictures/wallpapers/camellya_red_wuwa_twitter_kyktsu0908.jpg")
 
     -- awful.wallpaper {
     --     screen = s,
@@ -100,94 +100,8 @@ screen.connect_signal("request::wallpaper", function(s)
 end)
 -- }}}
 
--- {{{ Wibar
-
--- Keyboard map indicator and switcher
-local mykeyboardlayout = awful.widget.keyboardlayout()
-
--- Create a textclock widget
-local mytextclock = wibox.widget.textclock()
-
-screen.connect_signal("request::desktop_decoration", function(s)
-    -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-
-    -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
-
-    -- Create an imagebox widget which will contain an icon indicating which layout we're using.
-    -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox {
-        screen  = s,
-        buttons = {
-            awful.button({ }, 1, function () awful.layout.inc( 1) end),
-            awful.button({ }, 3, function () awful.layout.inc(-1) end),
-            awful.button({ }, 4, function () awful.layout.inc(-1) end),
-            awful.button({ }, 5, function () awful.layout.inc( 1) end),
-        }
-    }
-
-    -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist {
-        screen  = s,
-        filter  = awful.widget.taglist.filter.all,
-        buttons = {
-            awful.button({ }, 1, function(t) t:view_only() end),
-            awful.button({ modkey }, 1, function(t)
-                                            if client.focus then
-                                                client.focus:move_to_tag(t)
-                                            end
-                                        end),
-            awful.button({ }, 3, awful.tag.viewtoggle),
-            awful.button({ modkey }, 3, function(t)
-                                            if client.focus then
-                                                client.focus:toggle_tag(t)
-                                            end
-                                        end),
-            awful.button({ }, 4, function(t) awful.tag.viewprev(t.screen) end),
-            awful.button({ }, 5, function(t) awful.tag.viewnext(t.screen) end),
-        }
-    }
-
-    -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = {
-            awful.button({ }, 1, function (c)
-                c:activate { context = "tasklist", action = "toggle_minimization" }
-            end),
-            awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
-            awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
-            awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
-        }
-    }
-
-    -- Create the wibox
-    s.mywibox = awful.wibar {
-        position = "top",
-        screen   = s,
-        widget   = {
-            layout = wibox.layout.align.horizontal,
-            { -- Left widgets
-                layout = wibox.layout.fixed.horizontal,
-                mylauncher,
-                s.mytaglist,
-                s.mypromptbox,
-            },
-            s.mytasklist, -- Middle widget
-            { -- Right widgets
-                layout = wibox.layout.fixed.horizontal,
-                mykeyboardlayout,
-                wibox.widget.systray(),
-                mytextclock,
-                s.mylayoutbox,
-            },
-        }
-    }
-end)
-
--- }}}
+-- Wibar
+require("wibar.wibar")
 
 -- Awesome bindings
 require("modules.global_binds")
@@ -200,31 +114,48 @@ require("modules.client_binds")
 ruled.client.connect_signal("request::rules", function()
     -- All clients will match this rule.
     ruled.client.append_rule {
-        id         = "global",
-        rule       = { },
+        id = "global",
+        rule = { },
         properties = {
-            focus     = awful.client.focus.filter,
-            raise     = true,
-            screen    = awful.screen.preferred,
+            focus = awful.client.focus.filter,
+            raise = true,
+            screen = awful.screen.preferred,
             placement = awful.placement.no_overlap+awful.placement.no_offscreen
         }
     }
 
     -- Floating clients.
     ruled.client.append_rule {
-        id       = "floating",
+        id = "floating",
         rule_any = {
-            instance = { "copyq", "pinentry" },
-            class    = {
-                "Arandr", "Blueman-manager", "Gpick", "Kruler", "Sxiv",
-                "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer"
+            instance = {
+                "copyq",
+                "pinentry"
             },
+
+            class = {
+                "Arandr",
+                "Blueman-manager",
+                "Gpick",
+                "Kruler",
+                "Sxiv",
+                "Tor Browser",
+                "Wpa_gui",
+                "veromix",
+                "xtightvncviewer",
+                vars.file_manager:gsub("^%l", string.upper),
+                "qemu",
+                "virt-manager",
+                "Steam", "steam",
+            },
+
             -- Note that the name property shown in xprop might be set slightly after creation of the client
             -- and the name shown there might not match defined rules here.
-            name    = {
+            name = {
                 "Event Tester",  -- xev.
             },
-            role    = {
+
+            role = {
                 "AlarmWindow",    -- Thunderbird's calendar.
                 "ConfigManager",  -- Thunderbird's about:config.
                 "pop-up",         -- e.g. Google Chrome's (detached) Developer Tools.
@@ -235,16 +166,27 @@ ruled.client.connect_signal("request::rules", function()
 
     -- Add titlebars to normal clients and dialogs
     ruled.client.append_rule {
-        id         = "titlebars",
-        rule_any   = { type = { "normal", "dialog" } },
+        id = "titlebars",
+        rule_any = { type = { "normal", "dialog" } },
         properties = { titlebars_enabled = false }
     }
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- ruled.client.append_rule {
-    --     rule       = { class = "Firefox"     },
-    --     properties = { screen = 1, tag = "2" }
-    -- }
+    -- Set some application to always open on a given tag.
+    ruled.client.append_rule {
+        rule = { class = { "Steam", "steam" } },
+        properties = {
+            screen = 1,
+            tag = "5"
+        }
+    }
+
+    ruled.client.append_rule {
+        rule = { class = "virt-manager" },
+        properties = {
+            screen = 1,
+            tag = "6"
+        }
+    }
 end)
 -- }}}
 
@@ -297,8 +239,11 @@ require("modules.signals")
 -- Autostart
 awful.spawn.once("redshift -P -O 3000")
 awful.spawn.once("nm-applet")
-awful.spawn.once(HOME .. "/.config/awesome/autostart.sh")
-awful.spawn.once(HOME .. "/.config/scripts/desktop_mon_setup.sh")
+awful.spawn.once("systemctl --user start openrazer-daemon.service")
+-- awful.spawn.once("$HOME/.config/scripts/desktop-mon-setup.sh")
+
+awful.spawn.with_shell(HOME .. "/.config/awesome/autostart.sh")
+
 -- awful.spawn.once("/usr/bin/emacs --daemon")
 
 --- Virtual machine specifics

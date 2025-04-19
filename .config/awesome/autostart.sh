@@ -1,4 +1,3 @@
 #!/usr/bin/env sh
 
-# Start KWallet
-eval $(/usr/bin/kwalletd6 &)
+notify-send "Hello from script!"

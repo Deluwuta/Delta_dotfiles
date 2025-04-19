@@ -20,8 +20,8 @@ theme.extra_colors = {
     pinkish_white = "#faedff",
 }
 
-theme.font_name = "Hack "
-theme.font = theme.font_name .. "Medium 12"
+theme.font_name = "IntoneMonoNerdFont "
+theme.font = theme.font_name .. "Medium 14"
 
 theme.bg = colors.bg_dark
 theme.fg = colors.fg_normal
@@ -75,21 +75,21 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 -- Taglist (This one IS useful)
--- theme.taglist_font = theme.font_name .. "bold 10"
---
--- theme.taglist_bg_emtpy = theme.bg
--- theme.taglist_fg_emtpy = theme.fg
---
--- theme.taglist_bg_occupied = theme.bg
--- theme.taglist_fg_occupied = theme.fg
---
--- theme.taglist_bg_focus = "#48584e"
--- theme.taglist_fg_focus = theme.fg
---
--- theme.taglist_spacing = 4
--- theme.taglist_shape_border_width = 1
--- theme.taglist_shape_border_radius = 20
--- theme.taglist_shape_border_color = "#00000040"
+theme.taglist_font = theme.font_name .. "bold"
+
+theme.taglist_bg_emtpy = theme.bg
+theme.taglist_fg_emtpy = theme.fg
+
+theme.taglist_bg_occupied = theme.bg
+theme.taglist_fg_occupied = "#FF0000"
+
+theme.taglist_bg_focus = "#48584e"
+theme.taglist_fg_focus = theme.fg
+
+theme.taglist_spacing = 4
+theme.taglist_shape_border_width = 1
+theme.taglist_shape_border_radius = 20
+theme.taglist_shape_border_color = "#00000040"
 
 -- Tasklist config (I won't use one (For now lol))
 theme.tasklist_disable_task_name = false
